@@ -82,7 +82,7 @@ bot.on("guildMemberAdd", async (member) => { /*Mensagem de boas vindas ao usuár
     let channel = bot.channels.cache.get("859822260718272546"); // Id do canal.
     let emoji = member.guild.emojis.cache.find(emoji => emoji.name === '6885_Uganda'); /*Emoji*/
 
-    member.roles.add('764636649451290664')
+    member.roles.add('859897345683357716')
 
     let embed0 = new Discord.MessageEmbed()
         .setColor('#50ff00')
