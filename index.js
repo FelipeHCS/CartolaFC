@@ -49,30 +49,73 @@ bot.on('ready', () => { /*Atividade do bot (LET STATUS)*/
 
 bot.on('raw', async dados => {
     if (dados.t !== "MESSAGE_REACTION_ADD" && dados.t !== "MESSAGE_REACTION_REMOVE") return
-    if (dados.d.message_id !== "737686403961585725") return //Id da mensagem
+    if (dados.d.message_id !== "862720129158348830") return //Id da mensagem
 
-    let servidor = bot.guilds.cache.get("677548388165615636")//Id do Servidor
+    let servidor = bot.guilds.cache.get("859808278133604372")//Id do Servidor
     let membro = servidor.members.cache.get(dados.d.user_id)//Id do membro
 
-    let cargo2 = servidor.roles.cache.get('737686403961585725') // Id do cargo 2
-    let cargo3 = servidor.roles.cache.get('737686403961585725') // Id do cargo 3
+    let cargo1 = servidor.roles.cache.get('859899316180484107') // Id do cargo 1 CRU
+    let cargo2 = servidor.roles.cache.get('862720661852389416') // Id do cargo 2 CAM
+    let cargo3 = servidor.roles.cache.get('862723296189612042') // Id do cargo 3 AMG
+    let cargo4 = servidor.roles.cache.get('862723393324974100') // Id do cargo 4 CAP
+    let cargo5 = servidor.roles.cache.get('862723464926593064') // Id do cargo 5 ATLGO
+    let cargo6 = servidor.roles.cache.get('862724285344776212') // Id do cargo 6 FLA
+    let cargo7 = servidor.roles.cache.get('862724457037955102') // Id do cargo 7 COR
+    let cargo8 = servidor.roles.cache.get('862725151241666600') // Id do cargo 7 SP
 
     if (dados.t === "MESSAGE_REACTION_ADD") {
-        if (dados.d.emoji.name === "✈️") {
+        if (dados.d.emoji.id === "862717602450112512") {
+            if (membro.roles.cache.has(cargo1)) return
+            membro.roles.add(cargo1)
+        } else if (dados.d.emoji.id === "862718761298821180") {
             if (membro.roles.cache.has(cargo2)) return
             membro.roles.add(cargo2)
-        } else if (dados.d.emoji.name === "🔫") {
+        } else if (dados.d.emoji.id === "862718332951461939") {
             if (membro.roles.cache.has(cargo3)) return
             membro.roles.add(cargo3)
+        } else if (dados.d.emoji.id === "862718332263727134") {
+            if (membro.roles.cache.has(cargo4)) return
+            membro.roles.add(cargo4)
+        } else if (dados.d.emoji.id === "862718332296888340") {
+            if (membro.roles.cache.has(cargo5)) return
+            membro.roles.add(cargo5)
+        } else if (dados.d.emoji.id === "862718332619849767") {
+            if (membro.roles.cache.has(cargo6)) return
+            membro.roles.add(cargo6)
+        } else if (dados.d.emoji.id === "862719445323218994") {
+            if (membro.roles.cache.has(cargo7)) return
+            membro.roles.add(cargo7)
+        }else if (dados.d.emoji.id === "862718333060644904") {
+            if (membro.roles.cache.has(cargo8)) return
+            membro.roles.add(cargo8)
         }
     }
     if (dados.t === "MESSAGE_REACTION_REMOVE") {
-        if (dados.d.emoji.name === "✈️") {
+        if (dados.d.emoji.id === "862717602450112512") {
+            if (membro.roles.cache.has(cargo1)) return
+            membro.roles.remove(cargo1)
+        } else if (dados.d.emoji.id === "862718761298821180") {
             if (membro.roles.cache.has(cargo2)) return
             membro.roles.remove(cargo2)
-        } else if (dados.d.emoji.name === "🔫") {
+        } else if (dados.d.emoji.id === "862718332951461939") {
             if (membro.roles.cache.has(cargo3)) return
             membro.roles.remove(cargo3)
+        } else if (dados.d.emoji.id === "862718332263727134") {
+            if (membro.roles.cache.has(cargo4)) return
+            membro.roles.remove(cargo4)
+        } else if (dados.d.emoji.id === "862718332296888340") {
+            if (membro.roles.cache.has(cargo5)) return
+            membro.roles.remove(cargo5)
+        } else if (dados.d.emoji.id === "862718332619849767") {
+            if (membro.roles.cache.has(cargo6)) return
+            membro.roles.remove(cargo6)
+        } else if (dados.d.emoji.id === "862719445323218994") {
+            if (membro.roles.cache.has(cargo7)) return
+            membro.roles.remove(cargo7)
+        }
+        else if (dados.d.emoji.id === "862718333060644904") {
+            if (membro.roles.cache.has(cargo8)) return
+            membro.roles.remove(cargo8)
         }
     }
 })
